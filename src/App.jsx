@@ -1,13 +1,7 @@
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Header from "./components/Header";
+import Homepage from "./pages/HomePage";
+import AboutUsPage from "./pages/AboutUsPage";
+import PostListPage from "./pages/PostListPage";
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
+  return <></>;
 }
