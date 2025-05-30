@@ -49,16 +49,26 @@ export default function PostListPage() {
 
   return (
     <div className="container">
-      <h1>Articoli del Blog</h1>
-      {blogPosts.map((post) => (
-        <div key={post.id} className="">
-          <h2>{post.title}</h2>
-          <p>
-            {post.author} - {post.date}
-          </p>
-          <p>{post.summary}</p>
-        </div>
-      ))}
+      <h1 className="mb-4">Articoli del Blog</h1>
+      <div className="row">
+        {blogPosts.map((post) => (
+          <div className="col-md-4 mb-4">
+            <div key={post.id} className="card h-100">
+              <div className="card-header">
+                <h2>{post.title}</h2>
+              </div>
+              <div className="card-body">
+                <p>
+                  {post.author} - {post.date}
+                </p>
+                <p>
+                  <em>{post.summary}</em>
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
