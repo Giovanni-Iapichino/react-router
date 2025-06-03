@@ -17,7 +17,7 @@ export default function PostListPage() {
 
   return (
     <div className="container">
-      <h1 className="mb-4">Articoli del Blog</h1>
+      <h1 className="mb-4">Post del Blog</h1>
       <div className="row">
         {post.map((post) => (
           <div key={post.id} className="col-md-4 mb-4">
@@ -25,11 +25,13 @@ export default function PostListPage() {
               <div className="card-header">
                 <h2>{post.title}</h2>
               </div>
-              <div className="card-body">
+              <img
+                className="img-fluid"
+                src={`http://localhost:3000${post.image}`}
+                alt={post.title}
+              />
+              <div className="card-body mt-2">
                 <p>{post.tags}</p>
-                <p>
-                  <em>{post.content}</em>
-                </p>
               </div>
               <p>
                 <Link to={`/post/${post.id}`}>Mostra di più</Link>
