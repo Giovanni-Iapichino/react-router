@@ -31,6 +31,9 @@ export default function PostListPage() {
                   <em>{post.content}</em>
                 </p>
               </div>
+              <p>
+                <Link to={`/post/${post.id}`}>Mostra di più</Link>
+              </p>
             </div>
           </div>
         ))}

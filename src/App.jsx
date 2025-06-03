@@ -3,6 +3,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import PostListPage from "./pages/PostListPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DefaultLayouts from "./layouts/DefaultLayouts";
+import PostDetailPage from "./pages/PostDetailPage";
 
 export default function App() {
   return (
@@ -12,7 +13,11 @@ export default function App() {
           <Route element={<DefaultLayouts />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutUsPage />} />
-            <Route path="/post" element={<PostListPage />} />
+
+            <Route path="/post">
+              <Route path="" element={<PostListPage />} />
+              <Route path=":id" element={<PostDetailPage />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
